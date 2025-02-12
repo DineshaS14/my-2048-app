@@ -255,23 +255,24 @@ const CanvasGame: React.FC = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen p-6 bg-gradient-to-br from-blue-500 to-purple-600">
-      <h1 className="text-5xl font-bold text-white mb-4">2048 By DinDin</h1>
+    <div className="flex flex-col items-center justify-center inline-block border-4 p-6 border-black rounded-lg bg-gradient-to-br from-blue-500 to-purple-600">
+      
       <div className="flex justify-between w-80 mb-4 space-x-4">
-        <div className="bg-[#bbada0] text-white px-4 py-2 rounded border border-solid border-black">
+        <div className="bg-[#bbada0] text-black px-4 py-2 rounded border-4 border-solid border-[#1f2129]">
           Score: {score}
         </div>&nbsp;&nbsp;&nbsp;
-        <div className="bg-[#bbada0] text-white px-4 py-2 rounded border border-solid border-black">
+        <div className="bg-[#bbada0] text-black px-4 py-2 rounded border-4 border-solid border-black">
           Best: {bestScore}
         </div>
-      </div>
+      
       <button
         onClick={newGame}
-        className="bg-orange-300 border border-black text-black px-8 py-4 rounded hover:bg-orange-400 text-2xl mb-4"
+        className="bg-orange-600 border-4 border-[#171717] text-black px-8 py-4 rounded hover:bg-orange-400 text-2xl mb-4"
       >
         New Game
       </button>
-      <div className="relative">
+      </div>
+      <div className="relative inline-block rounded-lg overflow-hidden">
         <canvas
           ref={canvasRef}
           width={CANVAS_SIZE}
@@ -300,15 +301,6 @@ const CanvasGame: React.FC = () => {
             </button>
           </div>
         )}
-      </div>
-      <div className="mt-6 p-4 border-4 border-black rounded-lg bg-yellow-100 max-w-md shadow-xl">
-        <h2 className="text-2xl font-bold mb-2 text-center text-gray-800">Game Rules</h2>
-        <ul className="list-disc list-inside text-gray-700 border-4 border-black border-solid p-4 bg-white rounded-lg">
-          <li>Use the arrow keys to move the tiles.</li>
-          <li>Tiles with the same number merge when they touch.</li>
-          <li>A new tile appears after each move.</li>
-          <li>Reach 2048 to win—but no win overlay; keep playing!</li>
-        </ul>
       </div>
     </div>
   );

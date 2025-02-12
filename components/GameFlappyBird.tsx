@@ -42,7 +42,7 @@ const FlappyBird: React.FC = () => {
     for (let i = 0; i < NUM_PIPES; i++) {
       const x = CANVAS_WIDTH + i * PIPE_SPACING;
       const bottomY = Math.random() * (CANVAS_HEIGHT - 300) + 150; // safe vertical margin
-      const gap = Math.random() * (120 - 80) + 80; // gap between 80 and 120
+      const gap = 110; // gap between 80 and 120
       pipes.push({ x, bottomY, gap, scored: false });
     }
     return pipes;
@@ -95,7 +95,7 @@ const FlappyBird: React.FC = () => {
           pipe.x += NUM_PIPES * PIPE_SPACING;
           // Generate new random vertical values for a new gap
           pipe.bottomY = Math.random() * (CANVAS_HEIGHT - 300) + 150;
-          pipe.gap = Math.random() * (120 - 80) + 80;
+          pipe.gap = 110;
           pipe.scored = false;
         }
       });
