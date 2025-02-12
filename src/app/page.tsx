@@ -1,11 +1,12 @@
 import type { NextPage } from 'next';
-import Game from '../../components/Game';
+import CanvasGame from '../../components/Game';
+import FlappyBird from '../../components/FlappyBird';
 
 const Home: NextPage = () => {
   return (
-    <div className="min-h-screen bg-gray-100 flex flex-col items-center justify-center">
+    <div className="min-h-screen flex flex-col items-center justify-center">
       <h1 className="text-4xl font-bold mb-8">2048 Game</h1>
-      <Game />
+      <FlappyBird />
     </div>
   );
 };

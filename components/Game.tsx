@@ -258,8 +258,12 @@ const CanvasGame: React.FC = () => {
     <div className="flex flex-col items-center justify-center min-h-screen p-6 bg-gradient-to-br from-blue-500 to-purple-600">
       <h1 className="text-5xl font-bold text-white mb-4">2048 By DinDin</h1>
       <div className="flex justify-between w-80 mb-4 space-x-4">
-        <div className="bg-[#bbada0] text-white px-4 border-solid border-black py-2 rounded">Score: {score}</div>&nbsp;&nbsp;&nbsp;
-        <div className="bg-[#bbada0] text-white px-4 py-2 rounded">Best: {bestScore}</div>
+        <div className="bg-[#bbada0] text-white px-4 py-2 rounded border border-solid border-black">
+          Score: {score}
+        </div>&nbsp;&nbsp;&nbsp;
+        <div className="bg-[#bbada0] text-white px-4 py-2 rounded border border-solid border-black">
+          Best: {bestScore}
+        </div>
       </div>
       <button
         onClick={newGame}
@@ -279,7 +283,7 @@ const CanvasGame: React.FC = () => {
           <div className="absolute inset-0 flex flex-col items-center justify-center bg-black bg-opacity-70 rounded-lg">
             <button
               onClick={() => setGameStarted(true)}
-              className="bg-orange-700 border border-black text-white px-8 py-4 rounded hover:bg-orange-800 text-2xl"
+              className="bg-orange-900 border-2 border-orange-700 text-white px-8 py-4 rounded hover:bg-orange-800 text-2xl"
             >
               Play
             </button>

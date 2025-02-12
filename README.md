@@ -34,3 +34,17 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+Flappy Bird:
+
+In my original version, when clicked to "flap," the code only applied a short-lived negative acceleration (‑300) for a brief moment while gravity (800) was continuously acting. This meant the net acceleration was still positive (downward), so the bird kept falling instead of jumping up.
+
+What I did to fix it:
+
+Immediate Impulse Instead of Temporary Acceleration:
+I replaced the temporary acceleration (using the isFlapping state) with an immediate change to the bird’s vertical velocity. When you click, the bird’s velocity is instantly set to a negative value (e.g., -300). This gives the bird a strong upward "kick" that immediately counteracts gravity.
+
+Gravity Continues to Act:
+After setting the upward impulse, gravity is applied as normal in the game loop. This means the bird will slow its ascent and eventually start to fall, creating a more responsive jump and fall behavior.
+
+In summary, by directly setting the bird’s vertical velocity to a negative impulse on click, I ensured that the bird got a proper upward boost instead of trying to overcome gravity with a too-small acceleration, thus fixing the falling issue.
