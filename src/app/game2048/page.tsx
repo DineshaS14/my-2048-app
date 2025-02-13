@@ -8,9 +8,13 @@ function Game2048Page() {
     <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-blue-200 to-purple-300 p-4">
       {/* Header */}
       <header className="mb-8 text-center">
-        <h1 className="text-5xl font-bold text-gray-900 drop-shadow-lg">Game 2048</h1>
+        <h1
+        style={{
+          textShadow: "4px 4px 2px rgba(0, 0, 0, 0.6)", // Black shadow
+        }} 
+        className="text-6xl italic font-black text-[#312626] drop-shadow-lg">Game 2048</h1>
         <h3 className="text-xl text-gray-700 mt-2">
-          Made by Dinesha for the LiL Bro TJW
+          Made by Dinesha 
         </h3>
       </header>
 

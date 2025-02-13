@@ -344,7 +344,7 @@ const CanvasGame: React.FC = () => {
     color: "#312626",
     textShadow: "4px 4px 2px rgba(0, 0, 0, 0.6)", // Black shadow
   }} 
-  className="bg-red-500 font-bold text-6xl">2048</div>
+  className="font-bold text-6xl">2048</div>
   <div 
   style={{fontSize: "0.9rem"}}
   className="text-xs">
@@ -402,7 +402,7 @@ const CanvasGame: React.FC = () => {
         />
         {/* Start overlay: if the game hasn't started, show Play and New Game buttons side-by-side */}
         {!gameStarted && (
-          <div className="absolute inset-0 flex flex-col items-center justify-center bg-black bg-opacity-70 rounded-lg">
+          <div className="absolute inset-0 flex flex-col items-center justify-center bg-opacity-70 rounded-lg">
             <div className="flex space-x-4">
               <button
                 onClick={() => setGameStarted(true)}
