@@ -116,7 +116,7 @@ const moveRowLeft = (row: number[]): { newRow: number[]; score: number } => {
 const moveLeft = (
   board: number[][]
 ): { newBoard: number[][]; totalScore: number } => {
-  let newBoard: number[][] = [];
+  const newBoard: number[][] = [];
   let totalScore = 0;
   for (let i = 0; i < board.length; i++) {
     const { newRow, score } = moveRowLeft(board[i]);
@@ -132,7 +132,7 @@ const moveLeft = (
 const moveRight = (
   board: number[][]
 ): { newBoard: number[][]; totalScore: number } => {
-  let newBoard: number[][] = [];
+  const newBoard: number[][] = [];
   let totalScore = 0;
   for (let i = 0; i < board.length; i++) {
     const reversedRow = [...board[i]].reverse();
@@ -312,7 +312,7 @@ const CanvasGame: React.FC = () => {
         handleMove(moves[e.key as keyof typeof moves]);
       }
     },
-    [board, score, gameOver]
+    [board, score, gameOver, handleMove] // React requires all used variables/functions inside useCallback to be listed in the dependency array.
   );
 
   // Add the keydown event listener when the component mounts
